@@ -10,6 +10,14 @@ module.exports = {
             throw('error')
         }
     },
+    getUsersByName:function*(name){
+        try{
+            let users = yield userModel.find({name});
+            return users;
+        }catch(e){
+            throw(e)
+        }
+    },
     getAll:function*(){
         try{
             let users = yield userModel.find();

@@ -7,6 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 router.get('/get-all', wrap(DB.getAll));
+router.get('/get-by-name/:name', wrap(DB.getUsersByName));
 
 router.post('/api/v1/save-data',wrap(DB.save));
 module.exports = router;
